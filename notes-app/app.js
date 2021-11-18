@@ -1,5 +1,5 @@
 const fs = require('fs');
-const notes = require('./notes.js');
+const note = require('./notes.js');
 const chalk = require('chalk');
 const yargs = require('yargs');
 
@@ -9,11 +9,11 @@ fs.appendFileSync('notes.txt','I live in Posadas'); //Para agregar otro mensaje 
 //segundo desafio
 //Agregue require('./notes.js')
 
-const sum = notes(4,7);
-console.log(sum);
-console.log(chalk.blue(sum))
-console.log(chalk.underline.bold(sum))
-console.log(chalk.bgGreen(sum))
+//const sum = notes(4,7);
+//console.log(sum);
+//console.log(chalk.blue(sum))
+//console.log(chalk.underline.bold(sum))
+//console.log(chalk.bgGreen(sum))
 
 //Customize yargs version
 yargs.version('1.1.0')
@@ -37,8 +37,7 @@ yargs.command({
         }
     },
     handler: function (argv) {
-        console.log('Title: ' + argv.title)
-        console.log('Body: ' + argv.body)
+        note.addNote(argv.title, argv.body)
     }
 })
 
