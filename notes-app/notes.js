@@ -7,15 +7,23 @@ const getNotes = function(a,b){
 
 const addNote = function (title, body) {
     const notes = loadNotes()
-
-    notes.push({
-        title: title,
-        body: body
+    const duplicateNotes = notes.find(function (note) {
+        return note.title === title
     })
 
-    saveNote(notes)
-
-    console.log(notes)
+    if (duplicateNotes.length === 0) {
+        notes.push({
+            title: title,
+            body: body
+        })
+    
+        saveNote(notes)
+    
+        console.log(notes)
+    } else {
+        console.log('Note title ya existe')
+    }
+    
 }
 
 const saveNote = function (notes) {
