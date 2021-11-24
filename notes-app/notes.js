@@ -7,6 +7,9 @@ const getNotes = function(a,b){
     return a+b;
 }
 
+// node inspect app.js add --title="a" --title ="atitle" // to run debug mode -> chrome://inspect
+//debugger 
+
 const addNote = (title, body) => {
     const notes = loadNotes()
     //const duplicateNotes = notes.filter((note) => note.title === title)
