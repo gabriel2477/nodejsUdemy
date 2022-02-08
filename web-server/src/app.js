@@ -6,8 +6,12 @@ const app = express();
 //app.com/help
 //app.com/about
 
-app.get('',(req, res) =>{
+app.get('', (req, res) =>{
     res.send('Hello express!')
+})
+
+app.get('/help', (req, res) =>{
+    res.send('Help page!')
 })
 
 app.listen(3000, () =>{
