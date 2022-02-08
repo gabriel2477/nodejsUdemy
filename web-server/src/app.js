@@ -11,11 +11,17 @@ app.get('', (req, res) =>{
 })
 
 app.get('/help', (req, res) =>{
-    res.send('Help page!')
+    res.send('<h1>Help Page! </h1>')
 })
 
 app.get('/about', (req, res) =>{
-    res.send('About page!')
+    res.send([{
+        name: "Gabriel",
+        age: 31
+    },{
+        name: "Amalia",
+        age: 27
+    }])
 })
 
 app.get('/weather', (req, res) =>{
