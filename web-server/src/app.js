@@ -1,6 +1,14 @@
+const path = require('path');
 const express = require('express');
 
 const app = express();
+
+//console.log(__dirname);  //Sirve para obtener el path del directorio donde se encuentra el codigo fuente.
+//console.log(__filename); //Sirve para obtener el path del directorio donde se encuentra el archivo donde estas parado.
+console.log(path.join(__dirname,'../public'));
+const publicDirectoryPath = path.join(__dirname,'../public');
+
+app.use(express.static(publicDirectoryPath)) //configure express to serve the public page.
 
 //app.com
 //app.com/help
